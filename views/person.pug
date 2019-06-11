@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .main.container
+    .row
+        div(class="container")
+            table(class="table" style="font-color:red")
+                thead
+                    tr(style="color:red;" )
+                        th Id
+                        th Name
+                        th Email
+                        th Edit
+                        th delete
+                tbody
+                    each item in data
+                      tr(style="color:yellow;")
+                        td #{item['_id']}
+                         td #{item['name']}
+                         td #{item['email']}
+                         td
+                            a(href='/edit?id=' + item["_id"]) Edit
+                         td 
+                            a(href='/delete?id=' + item["_id"]) Delete
